@@ -91,7 +91,6 @@ C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\bin\Deb
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
-C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\HeroApp.csprojAssemblyReference.cache
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\HeroApp.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\HeroApp.AssemblyInfoInputs.cache
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\HeroApp.AssemblyInfo.cs
@@ -110,6 +109,7 @@ C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Deb
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\Razor\Views\Team\Index.cshtml.g.cs
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\HeroApp.RazorTargetAssemblyInfo.cache
@@ -120,3 +120,4 @@ C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Deb
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\ref\HeroApp.dll
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\HeroApp.pdb
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\HeroApp.genruntimeconfig.cache
+C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\HeroApp.csprojAssemblyReference.cache
