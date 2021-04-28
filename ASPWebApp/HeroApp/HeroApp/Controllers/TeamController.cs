@@ -50,5 +50,15 @@ namespace HeroApp.Controllers
         }
 
 
+        [Route("DeleteTeam/{TeamID:int}")]
+        public IActionResult DeleteTeam(int TeamID)
+        {
+            var TeamValues = dbContext.Teams.FirstOrDefault(t => t.TeamID == TeamID); //Finds the record in the table to delete
+            dbContext.Teams.Remove(TeamValues); //executes sql quiry to delete table.
+            dbContext.SaveChanges(); //Saves the changes.
+            return RedirectToAction("Index");
+        }
+
+
     }
 }
