@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HeroApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ namespace HeroApp
         public string RivalTeam { get; set; }
         public string EstablishedDate { get; set; }
         public string Logo { get; set; }
+
+        public virtual List<Hero> Hero { get; set; }
     }
 }
 //Small change
