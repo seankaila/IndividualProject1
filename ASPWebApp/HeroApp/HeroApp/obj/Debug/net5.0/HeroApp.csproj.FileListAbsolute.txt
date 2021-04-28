@@ -109,6 +109,7 @@ C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Deb
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\Razor\Views\Team\AddTeam.cshtml.g.cs
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\Razor\Views\Team\Index.cshtml.g.cs
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
@@ -121,3 +122,4 @@ C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Deb
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\HeroApp.pdb
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\HeroApp.genruntimeconfig.cache
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\HeroApp.csprojAssemblyReference.cache
+C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\Razor\Views\Team\EditTeam.cshtml.g.cs

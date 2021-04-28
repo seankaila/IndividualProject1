@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace HeroApp
+namespace HeroApp.Models.Binding
 {
-    public class Team
+    public class AddTeamBindingModel
     {
         public int TeamID { get; set; }
         public string TeamName { get; set; }
@@ -15,4 +15,3 @@ namespace HeroApp
         public string Logo { get; set; }
     }
 }
-//Small change

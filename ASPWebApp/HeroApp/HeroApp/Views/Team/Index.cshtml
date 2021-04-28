@@ -8,7 +8,7 @@
 <h1>All Teams in Database.</h1>
 
 <p>
-    <a asp-action="Add">Add a New Team</a>
+    <a asp-action="AddTeam">Add a New Team</a>
 </p>
 <table class="table">
     <thead>
@@ -51,9 +51,8 @@
                     @Html.DisplayFor(modelItem => item.RivalTeam)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Update", new { id = item.TeamID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.TeamID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.TeamID })
+                    @Html.ActionLink("Edit", "EditTeam", new { id = item.TeamID }) |
+                    @Html.ActionLink("Delete", "DeleteTeam", new { id = item.TeamID })
 
                 </td>
             </tr>
