@@ -15,3 +15,4 @@ namespace HeroApp
         public string Logo { get; set; }
     }
 }
+//Small change
