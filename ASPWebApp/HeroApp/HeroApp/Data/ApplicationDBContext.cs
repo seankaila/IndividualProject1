@@ -9,6 +9,6 @@ namespace HeroApp.Data
     public class ApplicationDBContext : DbContext
     {
         public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options) { }
-        public DbSet<Team> Team { get; set; }
+        public DbSet<Team> Teams { get; set; }
     }
 }
