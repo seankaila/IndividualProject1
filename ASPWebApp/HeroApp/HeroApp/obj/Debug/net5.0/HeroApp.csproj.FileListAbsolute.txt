@@ -121,3 +121,5 @@ C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Deb
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\ref\HeroApp.dll
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\HeroApp.pdb
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\HeroApp.genruntimeconfig.cache
+C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\HeroApp.csprojAssemblyReference.cache
+C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\Razor\Views\Team\EditTeam.cshtml.g.cs
