@@ -60,5 +60,25 @@ namespace HeroApp.Controllers
         }
 
 
+        [Route("EditTeam/{TeamID:int}")]
+        public IActionResult EditTeam(int TeamID)
+        {
+            var TeamById = dbContext.Teams.FirstOrDefault(c => c.TeamID == TeamID);
+            return View(TeamById);
+        }
+        [HttpPost]
+        [Route("EditTeam/{TeamID:int}")]
+        public IActionResult EditTeam(Team team, int TeamID)
+        {
+            var TeamValues = dbContext.Teams.FirstOrDefault(t => t.TeamID == TeamID); //Finding the team by Id
+            TeamValues.TeamName = team.TeamName; //Replacing what was entered against what needs to be changed. 
+            TeamValues.City = team.City;
+            TeamValues.EstablishedDate = team.EstablishedDate;
+            TeamValues.RivalTeam = team.RivalTeam;
+            TeamValues.Logo = team.Logo;
+            dbContext.SaveChanges(); //saves the changes. 
+            return RedirectToAction("Index");
+        }
+
     }
 }
