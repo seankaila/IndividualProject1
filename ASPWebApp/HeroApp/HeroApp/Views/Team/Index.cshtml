@@ -52,7 +52,7 @@
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "EditTeam", new { id = item.TeamID }) |
-                    @Html.ActionLink("Delete", "DeleteTeam", new { id = item.TeamID })
+                    @Html.ActionLink("Delete", "DeleteTeam", new { id = item.TeamID }) |
                     @Html.ActionLink("View Members", "ViewHeros", new { id = item.TeamID })|
                     @Html.ActionLink("Add Members", "AddHero",  new {TeamID = item.TeamID })
                 </td>

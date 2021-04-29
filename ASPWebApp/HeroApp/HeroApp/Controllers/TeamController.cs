@@ -107,7 +107,7 @@ namespace HeroApp.Controllers
             };
             dbContext.Heros.Add(HeroValues);
             dbContext.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("ViewHeros", new {id = TeamID });
         }
 
 
