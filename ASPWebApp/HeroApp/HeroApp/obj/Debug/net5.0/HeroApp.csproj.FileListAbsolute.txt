@@ -126,3 +126,4 @@ C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Deb
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\Razor\Views\Hero\Index.cshtml.g.cs
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\Razor\Views\Team\AddHero.cshtml.g.cs
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\Razor\Views\Team\ViewHeros.cshtml.g.cs
+C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroApp\obj\Debug\net5.0\Razor\Views\Hero\EditHero.cshtml.g.cs
