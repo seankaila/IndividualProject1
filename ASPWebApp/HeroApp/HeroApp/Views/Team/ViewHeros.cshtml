@@ -25,17 +25,21 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    <img src="@item.Photo" style="height:128px;" />
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Alias)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Power)
-                </td>
-            </tr>
+        <tr>
+            <td>
+                <img src="@item.Photo" style="height:128px;" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alias)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Power)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditHero", "Hero", new { id = item.HeroID }) |
+                @Html.ActionLink("Delete", "DeleteHero", "Hero", new { id = item.HeroID }) |
+            </td>
+        </tr>
         }
     </tbody>
 </table>
