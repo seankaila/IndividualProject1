@@ -35,7 +35,7 @@ namespace HeroApp.Controllers
         [Route("EditHero/{HeroID:int}")]
         public IActionResult EditHero(Hero hero, int HeroID)
         {
-            var HeroValues = dbContext.Heros.FirstOrDefault(t => t.HeroID == HeroID); //Finding the team by Id
+            var HeroValues = dbContext.Heros.FirstOrDefault(h => h.HeroID == HeroID); //Finding the team by Id
             HeroValues.FirstName = hero.FirstName;
             HeroValues.LastName = hero.LastName; //Replacing what was entered against what needs to be changed. 
             HeroValues.Alias = hero.Alias;
@@ -47,6 +47,15 @@ namespace HeroApp.Controllers
             return RedirectToAction("Index");
         }
 
+
+        [Route("DeleteHero/{HeroID:int}")]
+        public IActionResult DeleteHero(int HeroID)
+        {
+            var HeroValues = dbContext.Heros.FirstOrDefault(h => h.HeroID == HeroID); //Finds the record in the table to delete
+            dbContext.Heros.Remove(HeroValues); //executes sql quiry to delete table.
+            dbContext.SaveChanges(); //Saves the changes.
+            return RedirectToAction("Index");
+        }
 
 
 
