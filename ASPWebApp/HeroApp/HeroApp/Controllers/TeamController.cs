@@ -43,8 +43,15 @@ namespace HeroApp.Controllers
                 City = bindingModel.City,
                 EstablishedDate = bindingModel.EstablishedDate,
                 RivalTeam = bindingModel.RivalTeam,
-                Logo = "https://www.pngitem.com/pimgs/m/5-50673_superman-logo-vector-blank-superman-logo-png-transparent.png", //Add if statement for emptyLogo. 
+                Logo = bindingModel.Logo,
             };
+            string png = ".png";
+            string jpeg = ".jpeg";
+            string jpg = ".jpg";
+            if (bindingModel.Logo == null)
+            {
+                TeamValues.Logo = "https://www.pngitem.com/pimgs/m/5-50673_superman-logo-vector-blank-superman-logo-png-transparent.png";
+            }
             dbContext.Teams.Add(TeamValues); //Adds the record. 
             dbContext.SaveChanges();  //Saves the changes made to the record
             return RedirectToAction("Index"); //Takes you back to the Teams page.
@@ -54,6 +61,13 @@ namespace HeroApp.Controllers
         [Route("DeleteTeam/{TeamID:int}")]
         public IActionResult DeleteTeam(int TeamID)
         {
+            var count = dbContext.Heros.Count(t => t.TeamID == TeamID);
+            for (int i = 0; i < count; i++)
+            {
+                var record = dbContext.Heros.FirstOrDefault(h => h.TeamID == TeamID);
+                dbContext.Heros.Remove(record);
+                dbContext.SaveChanges();
+            }
             var TeamValues = dbContext.Teams.FirstOrDefault(t => t.TeamID == TeamID); //Finds the record in the table to delete
             dbContext.Teams.Remove(TeamValues); //executes sql quiry to delete table.
             dbContext.SaveChanges(); //Saves the changes.
@@ -77,6 +91,13 @@ namespace HeroApp.Controllers
             TeamValues.EstablishedDate = team.EstablishedDate;
             TeamValues.RivalTeam = team.RivalTeam;
             TeamValues.Logo = team.Logo;
+            string png = ".png";
+            string jpeg = ".jpeg";
+            string jpg = ".jpg";
+            if (TeamValues.Logo == null)
+            {
+                TeamValues.Logo = "https://www.pngitem.com/pimgs/m/5-50673_superman-logo-vector-blank-superman-logo-png-transparent.png";
+            }
             dbContext.SaveChanges(); //saves the changes. 
             return RedirectToAction("Index");
         }
