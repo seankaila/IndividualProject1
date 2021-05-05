@@ -1,4 +1,5 @@
 ﻿using HeroApp.Data;
+using HeroApp.Interfaces;
 using HeroApp.Models;
 using HeroApp.Models.Binding;
 using Microsoft.AspNetCore.Mvc;
@@ -13,18 +14,19 @@ namespace HeroApp.Controllers
     [Route("[Controller]")]
     public class TeamController : Controller
     {
-        
-        private readonly ApplicationDBContext dbContext;
-        public TeamController(ApplicationDBContext applicationDbContext)
+
+        private IRepositoryWrapper repository;
+        public TeamController(IRepositoryWrapper repositoryWrapper)
         {
-            dbContext = applicationDbContext;
+            repository = repositoryWrapper;
         }
 
 
         [Route("")]
         public IActionResult Index() //Displays all the records in the Teams table. 
         {
-            var allTeams = dbContext.Teams.ToList();
+            var allTeams = repository.Teams.FinalALL();
+            //var allTeams = dbContext.Teams.ToList();
             return View(allTeams);  
         }
 
@@ -52,40 +54,51 @@ namespace HeroApp.Controllers
             {
                 TeamValues.Logo = "https://www.pngitem.com/pimgs/m/5-50673_superman-logo-vector-blank-superman-logo-png-transparent.png";
             }
-            dbContext.Teams.Add(TeamValues); //Adds the record. 
-            dbContext.SaveChanges();  //Saves the changes made to the record
+            repository.Teams.Create(TeamValues);
+            //dbContext.Teams.Add(TeamValues); //Adds the record.
+            repository.Save();
+            //dbContext.SaveChanges();  //Saves the changes made to the record
             return RedirectToAction("Index"); //Takes you back to the Teams page.
         }
 
-
+        
         [Route("DeleteTeam/{TeamID:int}")]
         public IActionResult DeleteTeam(int TeamID)
         {
-            var count = dbContext.Heros.Count(t => t.TeamID == TeamID);
+            var count = repository.Heros.FindByCondition(t => t.TeamID == TeamID).Count();
+            //var count = dbContext.Heros.Count(t => t.TeamID == TeamID);
             for (int i = 0; i < count; i++)
             {
-                var record = dbContext.Heros.FirstOrDefault(h => h.TeamID == TeamID);
-                dbContext.Heros.Remove(record);
-                dbContext.SaveChanges();
+                var record = repository.Heros.FindByCondition(h => h.TeamID == TeamID).FirstOrDefault();
+                //var record = dbContext.Heros.FirstOrDefault(h => h.TeamID == TeamID);
+                repository.Heros.Delete(record);
+                //dbContext.Heros.Remove(record);
+                repository.Save();
+                //dbContext.SaveChanges();
             }
-            var TeamValues = dbContext.Teams.FirstOrDefault(t => t.TeamID == TeamID); //Finds the record in the table to delete
-            dbContext.Teams.Remove(TeamValues); //executes sql quiry to delete table.
-            dbContext.SaveChanges(); //Saves the changes.
+            var TeamValues = repository.Teams.FindByCondition(t => t.TeamID == TeamID).FirstOrDefault();
+            //var TeamValues = dbContext.Teams.FirstOrDefault(t => t.TeamID == TeamID); //Finds the record in the table to delete
+            repository.Teams.Delete(TeamValues);
+            //dbContext.Teams.Remove(TeamValues); //executes sql quiry to delete table.
+            repository.Save();
+            //dbContext.SaveChanges(); //Saves the changes.
             return RedirectToAction("Index");
         }
 
-
+        
         [Route("EditTeam/{TeamID:int}")]
         public IActionResult EditTeam(int TeamID)
         {
-            var TeamById = dbContext.Teams.FirstOrDefault(t => t.TeamID == TeamID);
+            var TeamById = repository.Teams.FindByCondition(t => t.TeamID == TeamID).FirstOrDefault();
+            //var TeamById = dbContext.Teams.FirstOrDefault(t => t.TeamID == TeamID);
             return View(TeamById);
         }
         [HttpPost]
         [Route("EditTeam/{TeamID:int}")]
         public IActionResult EditTeam(Team team, int TeamID)
         {
-            var TeamValues = dbContext.Teams.FirstOrDefault(t => t.TeamID == TeamID); //Finding the team by Id
+            var TeamValues = repository.Teams.FindByCondition(t => t.TeamID == TeamID).FirstOrDefault();
+            //var TeamValues = dbContext.Teams.FirstOrDefault(t => t.TeamID == TeamID); //Finding the team by Id
             TeamValues.TeamName = team.TeamName; //Replacing what was entered against what needs to be changed. 
             TeamValues.City = team.City;
             TeamValues.EstablishedDate = team.EstablishedDate;
@@ -98,11 +111,13 @@ namespace HeroApp.Controllers
             {
                 TeamValues.Logo = "https://www.pngitem.com/pimgs/m/5-50673_superman-logo-vector-blank-superman-logo-png-transparent.png";
             }
-            dbContext.SaveChanges(); //saves the changes. 
+            repository.Teams.Update(TeamValues);
+            repository.Save();
+            //dbContext.SaveChanges(); //saves the changes. 
             return RedirectToAction("Index");
         }
 
-
+        /*
         [Route("AddHero/{TeamID:int}")]
         public IActionResult AddHero(int TeamID)
         {
@@ -140,6 +155,6 @@ namespace HeroApp.Controllers
             ViewBag.TeamName = team.TeamName;
             return View(heros);
         }
-
+        */
     }
 }
