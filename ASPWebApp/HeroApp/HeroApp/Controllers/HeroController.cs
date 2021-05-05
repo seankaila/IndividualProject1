@@ -44,7 +44,7 @@ namespace HeroApp.Controllers
             HeroValues.Power = hero.Power;
             HeroValues.Photo = hero.Photo;
             dbContext.SaveChanges(); //saves the changes. 
-            return RedirectToAction("Index");
+            return RedirectToAction("ViewHeros", "Team", new { id = hero.TeamID });
         }
 
 
@@ -54,11 +54,16 @@ namespace HeroApp.Controllers
             var HeroValues = dbContext.Heros.FirstOrDefault(h => h.HeroID == HeroID); //Finds the record in the table to delete
             dbContext.Heros.Remove(HeroValues); //executes sql quiry to delete table.
             dbContext.SaveChanges(); //Saves the changes.
-            return RedirectToAction("Index");
+            return RedirectToAction("ViewHeros", "Team", new { id = HeroValues.TeamID });
         }
 
 
-
+        [Route("HeroDetails/{HeroID:int}")]
+        public IActionResult HeroDetails(int HeroID)
+        {
+            var HeroById = dbContext.Heros.FirstOrDefault(h => h.HeroID == HeroID);
+            return View(HeroById);
+        }
 
 
     }

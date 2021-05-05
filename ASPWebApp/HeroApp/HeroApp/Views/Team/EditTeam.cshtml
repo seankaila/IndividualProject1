@@ -11,27 +11,27 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="TeamName" class="control-label"></label>
-                <input asp-for="TeamName" class="form-control" />
+                <input asp-for="TeamName" class="form-control" maxlength="50" required/>
                 <span asp-validation-for="TeamName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="City" class="control-label"></label>
-                <input asp-for="City" class="form-control" />
+                <input asp-for="City" class="form-control" maxlength="50" required/>
                 <span asp-validation-for="City" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="RivalTeam" class="control-label"></label>
-                <input asp-for="RivalTeam" class="form-control" />
+                <input asp-for="RivalTeam" class="form-control" maxlength="50" required/>
                 <span asp-validation-for="RivalTeam" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="EstablishedDate" class="control-label"></label>
-                <input asp-for="EstablishedDate" class="form-control" />
+                <input type="date" asp-for="EstablishedDate" class="form-control" />
                 <span asp-validation-for="EstablishedDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Logo" class="control-label"></label>
-                <input asp-for="Logo" class="form-control" />
+                <input asp-for="Logo" class="form-control" required/>
                 <span asp-validation-for="Logo" class="text-danger"></span>
             </div>
             <div class="form-group">
