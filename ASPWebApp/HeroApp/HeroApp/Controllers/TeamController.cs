@@ -84,7 +84,7 @@ namespace HeroApp.Controllers
             //dbContext.SaveChanges(); //Saves the changes.
             return RedirectToAction("Index");
         }
-
+        
         
         [Route("EditTeam/{TeamID:int}")]
         public IActionResult EditTeam(int TeamID)
@@ -117,11 +117,12 @@ namespace HeroApp.Controllers
             return RedirectToAction("Index");
         }
 
-        /*
+        
         [Route("AddHero/{TeamID:int}")]
         public IActionResult AddHero(int TeamID)
         {
-            var teamValues = dbContext.Teams.FirstOrDefault(t => t.TeamID == TeamID);
+            var teamValues = repository.Teams.FindByCondition(t => t.TeamID == TeamID).FirstOrDefault();
+            //var teamValues = dbContext.Teams.FirstOrDefault(t => t.TeamID == TeamID);
             ViewBag.TeamName = teamValues.TeamName;
             return View();
         }
@@ -138,15 +139,18 @@ namespace HeroApp.Controllers
                 Rival = bindingModel.Rival,
                 Power = bindingModel.Power,
                 DateOfBirth = bindingModel.Rival,
-                Team = dbContext.Teams.FirstOrDefault(t => t.TeamID == TeamID),
+                Team = repository.Teams.FindByCondition(t => t.TeamID == TeamID).First(),
+                 //Team = dbContext.Teams.FirstOrDefault(t => t.TeamID == TeamID),
                 Photo = "http://pm1.narvii.com/5825/6f8f51442d37f9d637fe16c34eceb9f4299cefb9_00.jpg",
             };
-            dbContext.Heros.Add(HeroValues);
-            dbContext.SaveChanges();
+            repository.Heros.Create(HeroValues);
+            //dbContext.Heros.Add(HeroValues);
+            repository.Save();
+            //dbContext.SaveChanges();
             return RedirectToAction("ViewHeros", new {id = TeamID });
         }
 
-
+        /*
         [Route("{id:int}/Heros")]
         public IActionResult ViewHeros(int id)
         {
