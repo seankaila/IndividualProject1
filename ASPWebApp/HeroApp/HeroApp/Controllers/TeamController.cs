@@ -1,4 +1,5 @@
 ﻿using HeroApp.Data;
+using HeroApp.Models;
 using HeroApp.Models.Binding;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -42,8 +43,15 @@ namespace HeroApp.Controllers
                 City = bindingModel.City,
                 EstablishedDate = bindingModel.EstablishedDate,
                 RivalTeam = bindingModel.RivalTeam,
-                Logo = "https://www.pngitem.com/pimgs/m/5-50673_superman-logo-vector-blank-superman-logo-png-transparent.png", //Add if statement for emptyLogo. 
+                Logo = bindingModel.Logo,
             };
+            string png = ".png";
+            string jpeg = ".jpeg";
+            string jpg = ".jpg";
+            if (bindingModel.Logo == null)
+            {
+                TeamValues.Logo = "https://www.pngitem.com/pimgs/m/5-50673_superman-logo-vector-blank-superman-logo-png-transparent.png";
+            }
             dbContext.Teams.Add(TeamValues); //Adds the record. 
             dbContext.SaveChanges();  //Saves the changes made to the record
             return RedirectToAction("Index"); //Takes you back to the Teams page.
@@ -53,6 +61,13 @@ namespace HeroApp.Controllers
         [Route("DeleteTeam/{TeamID:int}")]
         public IActionResult DeleteTeam(int TeamID)
         {
+            var count = dbContext.Heros.Count(t => t.TeamID == TeamID);
+            for (int i = 0; i < count; i++)
+            {
+                var record = dbContext.Heros.FirstOrDefault(h => h.TeamID == TeamID);
+                dbContext.Heros.Remove(record);
+                dbContext.SaveChanges();
+            }
             var TeamValues = dbContext.Teams.FirstOrDefault(t => t.TeamID == TeamID); //Finds the record in the table to delete
             dbContext.Teams.Remove(TeamValues); //executes sql quiry to delete table.
             dbContext.SaveChanges(); //Saves the changes.
@@ -63,7 +78,7 @@ namespace HeroApp.Controllers
         [Route("EditTeam/{TeamID:int}")]
         public IActionResult EditTeam(int TeamID)
         {
-            var TeamById = dbContext.Teams.FirstOrDefault(c => c.TeamID == TeamID);
+            var TeamById = dbContext.Teams.FirstOrDefault(t => t.TeamID == TeamID);
             return View(TeamById);
         }
         [HttpPost]
@@ -76,8 +91,54 @@ namespace HeroApp.Controllers
             TeamValues.EstablishedDate = team.EstablishedDate;
             TeamValues.RivalTeam = team.RivalTeam;
             TeamValues.Logo = team.Logo;
+            string png = ".png";
+            string jpeg = ".jpeg";
+            string jpg = ".jpg";
+            if (TeamValues.Logo == null)
+            {
+                TeamValues.Logo = "https://www.pngitem.com/pimgs/m/5-50673_superman-logo-vector-blank-superman-logo-png-transparent.png";
+            }
             dbContext.SaveChanges(); //saves the changes. 
             return RedirectToAction("Index");
+        }
+
+
+        [Route("AddHero/{TeamID:int}")]
+        public IActionResult AddHero(int TeamID)
+        {
+            var teamValues = dbContext.Teams.FirstOrDefault(t => t.TeamID == TeamID);
+            ViewBag.TeamName = teamValues.TeamName;
+            return View();
+        }
+        [HttpPost]
+        [Route("AddHero/{TeamID:int}")]
+        public IActionResult AddHero(AddHeroBindingModel bindingModel, int TeamID)
+        {
+            bindingModel.TeamID = TeamID;
+            var HeroValues = new Hero
+            {
+                FirstName = bindingModel.FirstName,
+                LastName = bindingModel.LastName,
+                Alias = bindingModel.Alias,
+                Rival = bindingModel.Rival,
+                Power = bindingModel.Power,
+                DateOfBirth = bindingModel.Rival,
+                Team = dbContext.Teams.FirstOrDefault(t => t.TeamID == TeamID),
+                Photo = "http://pm1.narvii.com/5825/6f8f51442d37f9d637fe16c34eceb9f4299cefb9_00.jpg",
+            };
+            dbContext.Heros.Add(HeroValues);
+            dbContext.SaveChanges();
+            return RedirectToAction("ViewHeros", new {id = TeamID });
+        }
+
+
+        [Route("{id:int}/Heros")]
+        public IActionResult ViewHeros(int id)
+        {
+            var team = dbContext.Teams.FirstOrDefault(t => t.TeamID == id);
+            var heros = dbContext.Heros.Where(h => h.Team.TeamID == id).ToList();
+            ViewBag.TeamName = team.TeamName;
+            return View(heros);
         }
 
     }
