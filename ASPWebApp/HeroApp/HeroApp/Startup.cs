@@ -1,4 +1,6 @@
 using HeroApp.Data;
+using HeroApp.Interfaces;
+using HeroApp.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,6 +32,7 @@ namespace HeroApp
             services.AddDbContext<ApplicationDBContext>(options =>
             options.UseMySql(myConnectionString, ServerVersion.AutoDetect(myConnectionString))); //Allows for connection to the database.
             services.AddControllersWithViews();
+            services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
