@@ -18,6 +18,6 @@ namespace HeroApp.Models
 
         public virtual Team Team { get; set; }
 
-        public int TeamID { get; set; }
+       public int TeamID { get; set; }
     }
 }
