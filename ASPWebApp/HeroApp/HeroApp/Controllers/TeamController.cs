@@ -138,27 +138,29 @@ namespace HeroApp.Controllers
                 Alias = bindingModel.Alias,
                 Rival = bindingModel.Rival,
                 Power = bindingModel.Power,
-                DateOfBirth = bindingModel.Rival,
-                Team = repository.Teams.FindByCondition(t => t.TeamID == TeamID).First(),
+                DateOfBirth = bindingModel.DateOfBirth,
+                Team = repository.Teams.FindByCondition(t => t.TeamID == TeamID).FirstOrDefault(),
                  //Team = dbContext.Teams.FirstOrDefault(t => t.TeamID == TeamID),
                 Photo = "http://pm1.narvii.com/5825/6f8f51442d37f9d637fe16c34eceb9f4299cefb9_00.jpg",
             };
-            repository.Heros.Create(HeroValues);
+            repository.Heros.Update(HeroValues);
             //dbContext.Heros.Add(HeroValues);
             repository.Save();
             //dbContext.SaveChanges();
             return RedirectToAction("ViewHeros", new {id = TeamID });
         }
 
-        /*
+       
         [Route("{id:int}/Heros")]
         public IActionResult ViewHeros(int id)
         {
-            var team = dbContext.Teams.FirstOrDefault(t => t.TeamID == id);
-            var heros = dbContext.Heros.Where(h => h.Team.TeamID == id).ToList();
+            var team = repository.Teams.FindByCondition(t => t.TeamID == id).FirstOrDefault();
+            // var team = dbContext.Teams.FirstOrDefault(t => t.TeamID == id);
+            var heros = repository.Heros.FindByCondition(h => h.TeamID == id).Where(h => h.TeamID == id);
+            //var heros = dbContext.Heros.Where(h => h.Team.TeamID == id).ToList();
             ViewBag.TeamName = team.TeamName;
             return View(heros);
         }
-        */
+        
     }
 }

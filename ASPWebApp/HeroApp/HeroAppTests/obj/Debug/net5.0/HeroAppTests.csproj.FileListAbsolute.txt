@@ -188,3 +188,5 @@ C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroAppTests\ob
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroAppTests\obj\Debug\net5.0\ref\HeroAppTests.dll
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroAppTests\obj\Debug\net5.0\HeroAppTests.pdb
 C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroAppTests\obj\Debug\net5.0\HeroAppTests.genruntimeconfig.cache
+C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroAppTests\bin\Debug\net5.0\Castle.Core.dll
+C:\Users\dharmindra.s.kaila\IndividualProject1\ASPWebApp\HeroApp\HeroAppTests\bin\Debug\net5.0\Moq.dll
