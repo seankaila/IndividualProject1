@@ -158,7 +158,7 @@ namespace HeroApp.Controllers
             // var team = dbContext.Teams.FirstOrDefault(t => t.TeamID == id);
             var heros = repository.Heros.FindByCondition(h => h.TeamID == id).Where(h => h.TeamID == id);
             //var heros = dbContext.Heros.Where(h => h.Team.TeamID == id).ToList();
-            ViewBag.TeamName = team.TeamName;
+            if (team != null){ ViewBag.TeamName = team.TeamName;}
             return View(heros);
         }
         

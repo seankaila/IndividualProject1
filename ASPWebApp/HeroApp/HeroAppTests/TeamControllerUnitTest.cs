@@ -15,8 +15,8 @@ namespace HeroAppTests
     public class TeamControllerUnitTest
     {
         private Mock<IRepositoryWrapper> mockRepo;
-       // private Mock<ITeam> iteam;
-       // private List<ITeam> teams;
+        // private Mock<ITeam> iteam;
+        // private List<ITeam> teams;
         private TeamController teamController;
         private Team team;
         private Hero hero;
@@ -27,7 +27,7 @@ namespace HeroAppTests
         public TeamControllerUnitTest()
         {
             addTeam = new AddTeamBindingModel { TeamID = 3, TeamName = "JusticeLeague", City = "Gotham", EstablishedDate = "20/03/1998", RivalTeam = "Legion Of Doom", Logo = "logo.png" };
-            addHero = new AddHeroBindingModel { HeroID = 3, FirstName = "Barry", LastName = "Alllen", DateOfBirth = "20/03/1998", Rival = "Reverse Flash", Photo = "logo.png", Alias = "The Flash", Power = "Speed", TeamID = 1};
+            addHero = new AddHeroBindingModel { HeroID = 3, FirstName = "Barry", LastName = "Alllen", DateOfBirth = "20/03/1998", Rival = "Reverse Flash", Photo = "logo.png", Alias = "The Flash", Power = "Speed", TeamID = 1 };
             editTeam = new Team { TeamID = 3, TeamName = "Avengers", City = "LA", EstablishedDate = "20/03/2012", RivalTeam = "Thanos ", Logo = "logo.png" };
             team = new Team { TeamID = 3, TeamName = "JusticeLeague", City = "Gotham", EstablishedDate = "20/03/1998", RivalTeam = "Legion Of Doom", Logo = "logo.png" };
             mockRepo = new Mock<IRepositoryWrapper>();
@@ -39,12 +39,12 @@ namespace HeroAppTests
         public void GetAllTeams_Test()
         {
             //Arrange
-            Moq.Language.Flow.IReturnsResult<IRepositoryWrapper> returnsResult = mockRepo.Setup(repo=>repo.Teams.FinalALL()).Returns(GetTeams);
+            Moq.Language.Flow.IReturnsResult<IRepositoryWrapper> returnsResult = mockRepo.Setup(repo => repo.Teams.FinalALL()).Returns(GetTeams);
             //Act
             var controllerActionResult = teamController.Index();
             //Assert
             Assert.NotNull(controllerActionResult);
-           
+
 
         }
         [Fact]
@@ -57,35 +57,49 @@ namespace HeroAppTests
             //Assert
             Assert.NotNull(controllerActionResult);
         }
-        /*
+
         [Fact]
         public void DeleteTeam_Test()
         {
+            /*
             //Arrange
             Moq.Language.Flow.IReturnsResult<IRepositoryWrapper> returnsResult = mockRepo.Setup(repo => repo.Teams.FindByCondition(t => t.TeamID == It.IsAny<int>())).Returns(GetTeams);
             int teamID = team.TeamID;
             //Act
             var controllerActionResult = teamController.DeleteTeam(teamID);
             //Assert
+            */
+            mockRepo.Setup(repo => repo.Teams.FindByCondition(r => r.TeamID == It.IsAny<int>())).Returns(GetTeams());
+            mockRepo.Setup(repo => repo.Heros.FindByCondition(r => r.TeamID == It.IsAny<int>())).Returns(GetHeros());
+            mockRepo.Setup(repo => repo.Teams.Delete(GetTeam()));
+            //Act
+            var controllerActionResult = teamController.DeleteTeam(It.IsAny<int>());
+            //Assert
+            Assert.NotNull(controllerActionResult);
 
-        }*/
+        }
         [Fact]
         public void EditTeam_Test()
-        { /*
-            //Arrange
-            Moq.Language.Flow.IReturnsResult<IRepositoryWrapper> returnsResult = mockRepo.Setup(repo => repo.Teams.FindByCondition(t => t.TeamID == It.IsAny<int>())).Returns(GetTeams);
-            
-            //Act
-            var controllerActionResult = teamController.AddTeam(addTeam);
-            var controllerActionResult2 = teamController.EditTeam(editTeam, 3);
-            //Assert
-            Assert.NotNull(controllerActionResult2); */
-            //Moq.Language.Flow.IReturnsResult<IRepositoryWrapper> returnsResult = mockRepo.Setup(repo => repo.Teams.FindByCondition(t => t.TeamID == It.IsAny<int>())).Returns(GetTeams);
-            
-            var controllerActionResult2 = teamController.EditTeam(editTeam, 3);
-            Assert.NotNull(controllerActionResult2);
-        }
+        {
+            //tersting that it returns a view
+            mockRepo.Setup(repo => repo.Teams.FindByCondition(r => r.TeamID == It.IsAny<int>())).Returns(GetTeams());
+            mockRepo.Setup(repo => repo.Teams.Update(GetTeam()));
+            var controllerActionResult = teamController.EditTeam(It.IsAny<int>());
+            Assert.NotNull(controllerActionResult);
 
+        }
+        /*
+        [Fact]
+        public void EditTeam_Test_WithAction()
+        {
+           //testing that the acton succeeded
+            mockRepo.Setup(repo => repo.Teams.FindByCondition(r => r.TeamID == It.IsAny<int>())).Returns(GetTeams());
+            mockRepo.Setup(repo => repo.Teams.Update(GetTeam()));
+            var controllerActionResult2 = teamController.EditTeam(editTeam,3);
+            Assert.NotNull(controllerActionResult2);
+
+        }
+        */
         [Fact]
         public void AddHero_Test()
         {
@@ -95,11 +109,24 @@ namespace HeroAppTests
             int teamID = team.TeamID;
             //Act
             var controllerActionResult = teamController.AddTeam(addTeam);
-            var controllerActionResult2 = teamController.AddHero(addHero,teamID);
+            var controllerActionResult2 = teamController.AddHero(addHero, teamID);
             //Assert
             Assert.NotNull(controllerActionResult2);
         }
-
+        [Fact]
+        public void ViewHero_Test()
+        {
+            //Arrange
+            Moq.Language.Flow.IReturnsResult<IRepositoryWrapper> returnsResult = mockRepo.Setup(repo => repo.Teams.FindByCondition(t => t.TeamID == It.IsAny<int>())).Returns(GetTeams);
+            Moq.Language.Flow.IReturnsResult<IRepositoryWrapper> returnsResult2 = mockRepo.Setup(repo => repo.Heros.FindByCondition(h => h.HeroID == It.IsAny<int>())).Returns(GetHeros);
+            int teamID = team.TeamID;
+            //Act
+            teamController.AddTeam(addTeam);
+            teamController.AddHero(addHero,1);
+            var controllerActionResult = teamController.ViewHeros(1);
+            //Assert
+            Assert.NotNull(controllerActionResult);
+        }
 
         private IEnumerable<Team> GetTeams()
         {
