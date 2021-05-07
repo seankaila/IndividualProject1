@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  name: SeanVM
+  name: mynewpool
 
 variables:
   solution: '**/*.sln'
