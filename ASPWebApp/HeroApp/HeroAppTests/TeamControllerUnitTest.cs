@@ -97,7 +97,6 @@ namespace HeroAppTests
             mockRepo.Setup(repo => repo.Teams.Update(GetTeam()));
             var controllerActionResult2 = teamController.EditTeam(editTeam,3);
             Assert.NotNull(controllerActionResult2);
-
         }
         */
         [Fact]
