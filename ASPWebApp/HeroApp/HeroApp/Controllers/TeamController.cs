@@ -123,7 +123,7 @@ namespace HeroApp.Controllers
         {
             var teamValues = repository.Teams.FindByCondition(t => t.TeamID == TeamID).FirstOrDefault();
             //var teamValues = dbContext.Teams.FirstOrDefault(t => t.TeamID == TeamID);
-            ViewBag.TeamName = teamValues.TeamName;
+            if (teamValues != null) { ViewBag.TeamName = teamValues.TeamName; }
             return View();
         }
         [HttpPost]

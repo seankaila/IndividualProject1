@@ -65,7 +65,7 @@ namespace HeroApp.Controllers
             //dbContext.Heros.Remove(HeroValues); //executes sql quiry to delete table.
             repository.Save();
             //dbContext.SaveChanges(); //Saves the changes.
-            return RedirectToAction("ViewHeros", "Team", new { id = HeroValues.TeamID });
+            return RedirectToAction("Index");
         }
 
 

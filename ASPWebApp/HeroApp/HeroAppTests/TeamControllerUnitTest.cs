@@ -22,11 +22,13 @@ namespace HeroAppTests
         private Hero hero;
         private Team editTeam;
         private AddTeamBindingModel addTeam;
+        private AddTeamBindingModel addTeam2;
         private AddHeroBindingModel addHero;
 
         public TeamControllerUnitTest()
         {
             addTeam = new AddTeamBindingModel { TeamID = 3, TeamName = "JusticeLeague", City = "Gotham", EstablishedDate = "20/03/1998", RivalTeam = "Legion Of Doom", Logo = "logo.png" };
+            addTeam2 = new AddTeamBindingModel { TeamID = 3, TeamName = "JusticeLeague", City = "Gotham", EstablishedDate = "20/03/1998", RivalTeam = "Legion Of Doom"};
             addHero = new AddHeroBindingModel { HeroID = 3, FirstName = "Barry", LastName = "Alllen", DateOfBirth = "20/03/1998", Rival = "Reverse Flash", Photo = "logo.png", Alias = "The Flash", Power = "Speed", TeamID = 1 };
             editTeam = new Team { TeamID = 3, TeamName = "Avengers", City = "LA", EstablishedDate = "20/03/2012", RivalTeam = "Thanos ", Logo = "logo.png" };
             team = new Team { TeamID = 3, TeamName = "JusticeLeague", City = "Gotham", EstablishedDate = "20/03/1998", RivalTeam = "Legion Of Doom", Logo = "logo.png" };
@@ -47,6 +49,18 @@ namespace HeroAppTests
 
 
         }
+
+        [Fact]
+        public void AddTeam1_Test()
+        {
+            //Arrange
+            Moq.Language.Flow.IReturnsResult<IRepositoryWrapper> returnsResult = mockRepo.Setup(repo => repo.Teams.FindByCondition(t => t.TeamID == It.IsAny<int>())).Returns(GetTeams);
+            //Act
+            var controllerActionResult = teamController.AddTeam();
+            //Assert
+            Assert.NotNull(controllerActionResult);
+        }
+
         [Fact]
         public void AddTeam_Test()
         {
@@ -54,6 +68,17 @@ namespace HeroAppTests
             Moq.Language.Flow.IReturnsResult<IRepositoryWrapper> returnsResult = mockRepo.Setup(repo => repo.Teams.FindByCondition(t => t.TeamID == It.IsAny<int>())).Returns(GetTeams);
             //Act
             var controllerActionResult = teamController.AddTeam(addTeam);
+            //Assert
+            Assert.NotNull(controllerActionResult);
+        }
+
+        [Fact]
+        public void AddTeamWithoutLogo_Test()
+        {
+            //Arrange
+            Moq.Language.Flow.IReturnsResult<IRepositoryWrapper> returnsResult = mockRepo.Setup(repo => repo.Teams.FindByCondition(t => t.TeamID == It.IsAny<int>())).Returns(GetTeams);
+            //Act
+            var controllerActionResult = teamController.AddTeam(addTeam2);
             //Assert
             Assert.NotNull(controllerActionResult);
         }
@@ -99,6 +124,19 @@ namespace HeroAppTests
             Assert.NotNull(controllerActionResult2);
         }
         */
+        [Fact]
+        public void AddHero1_Test()
+        {
+            //Arrange
+            Moq.Language.Flow.IReturnsResult<IRepositoryWrapper> returnsResult = mockRepo.Setup(repo => repo.Teams.FindByCondition(t => t.TeamID == It.IsAny<int>())).Returns(GetTeams);
+            Moq.Language.Flow.IReturnsResult<IRepositoryWrapper> returnsResult2 = mockRepo.Setup(repo => repo.Heros.FindByCondition(h => h.HeroID == It.IsAny<int>())).Returns(GetHeros);
+            int teamID = team.TeamID;
+            //Act
+            var controllerActionResult2 = teamController.AddHero(teamID);
+            //Assert
+            Assert.NotNull(controllerActionResult2);
+        }
+
         [Fact]
         public void AddHero_Test()
         {

@@ -224,9 +224,9 @@ var assemblies = [
   {
     "name": "HeroApp",
     "classes": [
-      { "name": "HeroApp.Controllers.HeroController", "rp": "HeroApp_HeroController.html", "cl": 0, "ucl": 35, "cal": 35, "tl": 82, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
-      { "name": "HeroApp.Controllers.HomeController", "rp": "HeroApp_HomeController.html", "cl": 0, "ucl": 13, "cal": 13, "tl": 37, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 4, "lch": [], "bch": [], "hc": [] },
-      { "name": "HeroApp.Controllers.TeamController", "rp": "HeroApp_TeamController.html", "cl": 54, "ucl": 41, "cal": 95, "tl": 166, "ct": "LineCoverage", "mc": "-", "cb": 2, "tb": 10, "lch": [], "bch": [], "hc": [] },
+      { "name": "HeroApp.Controllers.HeroController", "rp": "HeroApp_HeroController.html", "cl": 22, "ucl": 13, "cal": 35, "tl": 82, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
+      { "name": "HeroApp.Controllers.HomeController", "rp": "HeroApp_HomeController.html", "cl": 10, "ucl": 3, "cal": 13, "tl": 37, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 4, "lch": [], "bch": [], "hc": [] },
+      { "name": "HeroApp.Controllers.TeamController", "rp": "HeroApp_TeamController.html", "cl": 68, "ucl": 27, "cal": 95, "tl": 166, "ct": "LineCoverage", "mc": "-", "cb": 5, "tb": 14, "lch": [], "bch": [], "hc": [] },
       { "name": "HeroApp.Data.ApplicationDBContext", "rp": "HeroApp_ApplicationDBContext.html", "cl": 0, "ucl": 3, "cal": 3, "tl": 16, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HeroApp.Migrations.ApplicationDBContextModelSnapshot", "rp": "HeroApp_ApplicationDBContextModelSnapshot.html", "cl": 0, "ucl": 78, "cal": 78, "tl": 99, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
       { "name": "HeroApp.Migrations.initDB", "rp": "HeroApp_initDB.html", "cl": 0, "ucl": 52, "cal": 52, "tl": 85, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [], "bch": [], "hc": [] },
