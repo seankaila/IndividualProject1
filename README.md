@@ -91,10 +91,10 @@ Another example could be seen with the addition of my GitIgnore. My GitIgnore di
 - CI Pipeline needs to be added correctly.
 - Unit testing to be fully finished with an attempted to get 95% or more code coverage.
 
-##Acknowledgements
+## Acknowledgements
 - Ben Hesketh
 - Dara Oladapo
 - Victoria Sacre
 
-##Author
+## Author
 Dharmindra Sean Kaila
