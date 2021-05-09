@@ -46,4 +46,22 @@ As we can see from the image above we can see the controllers that contained the
 ![image](https://user-images.githubusercontent.com/82107182/117583446-1aefbc00-b0ff-11eb-8400-940fe067c5fa.png)
 The example above shows the edit feature for the Hero Controller not being implemented. Therefore the resulting coverage goes from 100% to 63% because one function wasnt tested.
 
+## Git, Continuous Integration (Pipeline) and best practices.
+
+### Version Control / Feature Branch model
+![image](https://user-images.githubusercontent.com/82107182/117585436-504dd700-b10a-11eb-8eef-a43dd31f2c34.png)
+During the duration of the project i was using a feature branch model to manage the version control aspect of the project. As you can see I used a three branch system to do this. These branches were: Main, dev and feature. I had multiple feature branches that were used when adding a new feature to the application. Once a feature was complete, It was then merged with the dev branch. Once a group of features were mreged to the dev branch that were free from error, i would then merge the dev branch to the main. This main acted as a live version of my product. Only containing code which was fully functional / bug free. 
+
+### CL Pipeline 
+![image](https://user-images.githubusercontent.com/82107182/117585662-7a53c900-b10b-11eb-915b-936a59761341.png)
+A CL pipeline was sucessfully impleneted with the project however, when displaying the webapp on the browser, i was greeted with a simple "hey .net developer message". instead of my application. This was a problem that i and many others fanced including the instructors. Given more time, we may have been able to solve this issue. However i was able to deploy the app service without the CI pipline though Visual studios publish option. 
+
+### Best practices
+This project was developed using a wide range of best practices. For example: documenting code with simple in line comments. This was done so that people outside the project could really understand how certain functions / operations worked, if they were ever to take the project off my hand and expand uppon it.
+
+![image](https://user-images.githubusercontent.com/82107182/117585933-277b1100-b10d-11eb-81da-83753a2ae739.png)
+![image](https://user-images.githubusercontent.com/82107182/117585936-319d0f80-b10d-11eb-91cc-88cb61356ebd.png)
+
+Another example could be seen with the addition to a git ignore as well. My git ignore didnt include certain files that contained passwords and test results. So that People who shouldnt seen important documents wouldnt be able to. The images above show a red circle next to files and folders indicating they are never being pushed to github. 
+
 
