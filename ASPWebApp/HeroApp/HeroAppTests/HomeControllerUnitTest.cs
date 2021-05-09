@@ -24,16 +24,16 @@ namespace HeroAppTests
         [Fact]
         void Index()
         {
-            var ControllerTestResult = homeController.Index();
-            Assert.NotNull(ControllerTestResult);
+            var controllerActionResult = homeController.Index();
+            Assert.NotNull(controllerActionResult);
 
         }
 
         [Fact]
         void Privacy()
         {
-            var ControllerTestResult = homeController.Privacy();
-            Assert.NotNull(ControllerTestResult);
+            var controllerActionResult = homeController.Privacy();
+            Assert.NotNull(controllerActionResult);
         }
 
     }
