@@ -69,6 +69,8 @@ Another example could be seen with the addition to a git ignore as well. My git 
 ## Known Issues / Futher Improvements 
 - Some key validation is missing from the finished product. For example: A user could add a future date to a birthday field and it would still go though. 
 - Warning message needs to be added when a user deletes a team or a hero. Accidental clicks do happen and this should be addressed in a further patch. 
-- The full hero list should have the functionality to edit and delte. These options do exist but they have to go though a spesific route to get to them. Its a simple fix by providing those buttons on the view. 
+- The full hero list should have the functionality to edit and delte. These options do exist but they have to go though a spesific route to get to them. Its a simple fix by providing those buttons on the view.
+- CI Pipeline needs to be added correctly.
+- Unit testing to be fully finished with an attempted to get 95% or more code coverage. 
 
 
