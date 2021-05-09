@@ -24,7 +24,7 @@ This project was intended to demonstrate the knowledge from the first four weeks
 ## Architecture
 
 ### Database ERD
-![image](https://user-images.githubusercontent.com/82107182/117579398-94c97a80-b0ea-11eb-8779-b41587489208.png)
+![image](https://user-images.githubusercontent.com/82107182/117591144-f3aee400-b12a-11eb-9d1d-1a2f2543ff2f.png)
 This is my database structure that was implemented to the project. As you can see the database consist of two tables (Hero Table & Team Table). These tables have a one-to-many relationship meaning, a team can have many heroes, but a hero can only have one team associated with it. These tables are linked with their respected primary and foreign keys and each element in the table has their respected data type added next to it
 
 Highlighted in red was a third table that was deemed out of scope due to time constraints. 
