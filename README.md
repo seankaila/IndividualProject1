@@ -17,9 +17,33 @@ This use Case diagram demonstrates what the end user would do with the curd appl
 
 ## Project Management 
 
-### Trello Board
+### Kanban Board
 ![image](https://user-images.githubusercontent.com/82107182/117580875-ed504600-b0f1-11eb-9d72-7ce3dbb680e4.png)
+To track and understand the progress of my project i used trello to create a Kanban Board. This board was split up into seven different sections. 
+
+- Epics: These are high level catagories each User story referes to. 
+- User Stories: These are derived from the Epics, detailing what a user whats to do and why they want to do that action. 
+- Tasks in progress: These contain low level tasks needed for a user story / epic to be deemed completed. 
+- Tasks completed: Tasks that are completed. 
+- Issues: Issues within the project that need attention
+- Issues resolved: Backlog of previous issues that are no logger a problem. 
+- Out of scope: Epics and user stories that were deemed out of scope dude to the duration of the project being too small. 
+
+Link to KanbanBoard: https://trello.com/b/MPUDF12C/individual-project-hero-app
+### Risk Management
+[Insert Image]
+
+## Testing
+This section details what unit tests were done and the code coverage report. 
+![image](https://user-images.githubusercontent.com/82107182/117582993-b92e5280-b0fc-11eb-9385-f087246fb099.png)
+Using the AAA (Arrange, Act, Assert) testing patten, a total of 15 unit tests were created for this project. I testing multiple controllers which did different operations for the CRUD application a range of tests were also included. For example: adding a team without a logo vs adding a team with a logo. 
+
+### Code Coverage Report
+![image](https://user-images.githubusercontent.com/82107182/117583114-525d6900-b0fd-11eb-8b7c-3205b38b70f5.png)
+From the screen shot above we can see the overall coverage of the application to be 14.1%. Although this is very low, we do have to take into account that code that wasnt inteded to be covered in this report was covered. For example: Views & database migrations etc. This resulted in a very low score. 
+![image](https://user-images.githubusercontent.com/82107182/117583262-21c9ff00-b0fe-11eb-8771-091b533ee9fd.png)
+As we can see from the image above we can see the controllers that contained the most import logic were tested. Each controller having an avarage score of 70%. Although this is a good result, the rests lack results for the edit funcions within the application. This is because i couldnt understand how to mock the data correctly for edting purposes and therefore i couldnt create good tests that would accuretly repreent how sound the overall edit feature was. 
+![image](https://user-images.githubusercontent.com/82107182/117583446-1aefbc00-b0ff-11eb-8400-940fe067c5fa.png)
+The example above shows the edit feature for the Hero Controller not being implemented. Therefore the resulting coverage goes from 100% to 63% because one function wasnt tested.
 
 
-
-https://trello.com/b/MPUDF12C/individual-project-hero-app
