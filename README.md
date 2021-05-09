@@ -10,7 +10,7 @@
     2. [Risk-Management](#Risk-Management)
 4. [Testing](#Testing)
     1. [Code-Coverage-Report](#Code-Coverage-Report)
-5. [Version Control-Continuous-Integration-Pipeline-and-Best-Practices](#Version Control-Continuous-Integration-Pipeline-and-Best-Practices)
+5. [Version-Control-Continuous-Integration-Pipeline-and-Best-Practices](#Version-Control-Continuous-Integration-Pipeline-and-Best-Practices)
     1. [Version-Control](#Version-Control)
     2. [CI-Pipeline](#CI-Pipeline)
     3. [Best-practices](#Best-practices)
@@ -66,7 +66,7 @@ As we can see from the image above, we can see the controllers that contained th
 ![image](https://user-images.githubusercontent.com/82107182/117583446-1aefbc00-b0ff-11eb-8400-940fe067c5fa.png)
 The example above shows the edit feature for the Hero Controller not being implemented. Therefore, the resulting coverage goes from 100% to 63% because one function wasn’t tested.
 
-## Version Control-Continuous-Integration-Pipeline-and-Best-Practices
+## Version-Control-Continuous-Integration-Pipeline-and-Best-Practices
 
 ### Version Control
 ![image](https://user-images.githubusercontent.com/82107182/117585436-504dd700-b10a-11eb-8eef-a43dd31f2c34.png)
