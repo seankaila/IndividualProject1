@@ -31,7 +31,9 @@ To track and understand the progress of my project i used trello to create a Kan
 
 Link to KanbanBoard: https://trello.com/b/MPUDF12C/individual-project-hero-app
 ### Risk Management
-[Insert Image]
+![image](https://user-images.githubusercontent.com/82107182/117587838-c73d9c80-b117-11eb-8264-d8f7b4bb3a0c.png)
+A simple risk assesement was preformed during the project. Each risk was described and evaluated along with a rating to understand the serverity of the risk. To expand upon this i did provided an update to each risk checking to see if they changed in anyway. 
+
 
 ## Testing
 This section details what unit tests were done and the code coverage report. 
