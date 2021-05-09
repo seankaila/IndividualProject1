@@ -1,6 +1,6 @@
 # IndividualProject: Hero App
 
-## Berif 
+## Brief 
 This project was inteded to demonstrate the knowledge from the first four weeks of training with QA. To do this I was tasked to create a CRUD application using C# & ASP.NET, testing the application though unit testing & deploying the application using a CL server and Azure App Service. All supported using project management tools for example: A Kanban Board. 
 
 ## Architecture
