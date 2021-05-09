@@ -66,4 +66,9 @@ This project was developed using a wide range of best practices. For example: do
 
 Another example could be seen with the addition to a git ignore as well. My git ignore didnt include certain files that contained passwords and test results. So that People who shouldnt seen important documents wouldnt be able to. The images above show a red circle next to files and folders indicating they are never being pushed to github. 
 
+## Known Issues / Futher Improvements 
+- Some key validation is missing from the finished product. For example: A user could add a future date to a birthday field and it would still go though. 
+- Warning message needs to be added when a user deletes a team or a hero. Accidental clicks do happen and this should be addressed in a further patch. 
+- The full hero list should have the functionality to edit and delte. These options do exist but they have to go though a spesific route to get to them. Its a simple fix by providing those buttons on the view. 
+
 
