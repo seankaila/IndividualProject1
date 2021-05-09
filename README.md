@@ -10,11 +10,11 @@
     2. [Risk-Management](#Risk-Management)
 4. [Testing](#Testing)
     1. [Code-Coverage-Report](#Code-Coverage-Report)
-5. [Git,-Continuous-Integration-(Pipeline)-and-Best-Practices](#Git,-Continuous-Integration-(Pipeline)-and-Best-Practices)
-    1. [Version Control-/-Feature Branch model](#Version-Control-/-Feature-Branch-model)
+5. [Version Control-Continuous-Integration-Pipeline-and-Best-Practices](#Version Control-Continuous-Integration-Pipeline-and-Best-Practices)
+    1. [Version-Control](#Version-Control)
     2. [CI-Pipeline](#CI-Pipeline)
     3. [Best-practices](#Best-practices)
-6. [Known-Issues-/-Futher-Improvements](#Known-Issues-/-Futher-Improvements)
+6. [Known-Issues-&-Futher-Improvements](#Known-Issues-&-Futher-Improvements)
 7. [Acknowledgements](#Acknowledgements)
 8. [Author](#Author)
    
@@ -66,9 +66,9 @@ As we can see from the image above, we can see the controllers that contained th
 ![image](https://user-images.githubusercontent.com/82107182/117583446-1aefbc00-b0ff-11eb-8400-940fe067c5fa.png)
 The example above shows the edit feature for the Hero Controller not being implemented. Therefore, the resulting coverage goes from 100% to 63% because one function wasn’t tested.
 
-## Git, Continuous Integration (Pipeline) and Best Practices
+## Version Control-Continuous-Integration-Pipeline-and-Best-Practices
 
-### Version Control / Feature Branch model
+### Version Control
 ![image](https://user-images.githubusercontent.com/82107182/117585436-504dd700-b10a-11eb-8eef-a43dd31f2c34.png)
 During the duration of the project, I was using a feature branch model to manage the version control aspect of the project. As you can see, I used a three-branch system to do this. These branches were: Main, dev and feature. I had multiple feature branches that were used when adding a new feature to the application. Once a feature was complete, it was then merged with the dev branch. Once a group of features were merged to the dev branch that were free from error, I would then merge the dev branch to the main. This main acted as a live version of my product. Only containing code which was fully functional / bug free. 
 
@@ -84,7 +84,7 @@ This project was developed using a wide range of best practices. For example: do
 
 Another example could be seen with the addition of my GitIgnore. My GitIgnore didn’t include certain files that contained passwords and test results. So that people who shouldn’t see important documents wouldn’t be able to. The images above show a red circle next to files and folders, indicating they are never being pushed to GitHub. 
 
-## Known Issues / Futher Improvements 
+## Known-Issues-&-Futher-Improvements 
 - Some key validation is missing from the finished product. For example: A user could add a future date to a birthday field, and it would still go though. 
 - Warning message needs to be added when a user deletes a team or a hero. Accidental clicks do happen, and this should be addressed in a further patch. 
 - The full hero list should have the functionality to edit and delete. These options do exist, but the user must go through a specific route to get to them. It’s a simple fix by providing those buttons on the view.
