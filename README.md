@@ -15,9 +15,10 @@
     2. [CI Pipeline](#CI-Pipeline)
     3. [Best practices](#Best-practices)
 6. [Known Issues & Futher Improvements](#Known-Issues-&-Futher-Improvements)
-7. [Acknowledgements](#Acknowledgements)
-8. [Author](#Author)
-   
+7. [Final Functioning Front-End](#Final-Functioning-Front-End)
+8. [Acknowledgements](#Acknowledgements)
+9. [Author](#Author)
+
 ## Brief 
 This project was intended to demonstrate the knowledge from the first four weeks of training with QA. To do this I was tasked to create a CRUD application using C# & ASP.NET, testing the application though unit testing & deploying the application using a CI server and Azure App Service. All supported using project management tools for example: A Kanban Board.
 
@@ -90,6 +91,17 @@ Another example could be seen with the addition of my GitIgnore. My GitIgnore di
 - The full hero list should have the functionality to edit and delete. These options do exist, but the user must go through a specific route to get to them. It’s a simple fix by providing those buttons on the view.
 - CI Pipeline needs to be added correctly.
 - Unit testing to be fully finished with an attempted to get 95% or more code coverage.
+
+## Final Functioning Front-End
+![image](https://user-images.githubusercontent.com/82107182/117591731-9ec09d00-b12d-11eb-8e2a-0c3a26539786.png)
+![image](https://user-images.githubusercontent.com/82107182/117591765-cd3e7800-b12d-11eb-93ec-f489f414e39c.png)
+![image](https://user-images.githubusercontent.com/82107182/117591780-dc252a80-b12d-11eb-97bf-337f1b87576b.png)
+![image](https://user-images.githubusercontent.com/82107182/117591787-e9dab000-b12d-11eb-8d4b-2a4c19871913.png)
+![image](https://user-images.githubusercontent.com/82107182/117591745-b009a980-b12d-11eb-965e-b39c935019d5.png)
+![image](https://user-images.githubusercontent.com/82107182/117591751-bc8e0200-b12d-11eb-9767-aef50788808b.png)
+![image](https://user-images.githubusercontent.com/82107182/117591818-0676e800-b12e-11eb-9c7e-55f22b0d2297.png)
+![image](https://user-images.githubusercontent.com/82107182/117591831-155d9a80-b12e-11eb-81d2-88818da670e5.png)
+
 
 ## Acknowledgements
 - Ben Hesketh
